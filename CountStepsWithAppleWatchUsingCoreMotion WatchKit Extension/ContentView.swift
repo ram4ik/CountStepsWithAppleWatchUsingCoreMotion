@@ -9,8 +9,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isTrackingRuning: Bool = false
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack(alignment: .leading) {
+            HStack {
+                Text("Time:")
+                Text("N/A")
+                Spacer()
+            }
+            HStack {
+                Text("Steps:")
+                Text("N/A")
+                Spacer()
+            }
+            HStack {
+                Text("Distance:")
+                Text("N/A")
+                Spacer()
+            }
+            Button(action: {
+                self.isTrackingRuning.toggle()
+            }) {
+                Text(self.isTrackingRuning ? "Stop Updating" : "Start Updating")
+            }
+            Spacer()
+        }
     }
 }
 
